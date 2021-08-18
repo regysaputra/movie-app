@@ -10,7 +10,7 @@ apply from: '../shared_dependencies.gradle'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
-
+    
     defaultConfig {
         applicationId "com.bangkit.batikapp"
         minSdkVersion 23
@@ -34,6 +34,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    lintOptions {
+        abortOnError false
     }
 
     buildFeatures {
