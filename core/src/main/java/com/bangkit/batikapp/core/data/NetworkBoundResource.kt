@@ -19,8 +19,9 @@ abstract class NetworkBoundResource<ResultType, RequestType>{
                     emitAll(loadFromDB().map { Resource.Success(it) })
                 }
                 is ApiResponse.Error -> {
+                    val value: Resource<ResultType> = Resource.Error(apiResponse.errorMessage)
                     onFetchFailed()
-                    emit(Resource.Error<ResultType>(apiResponse.errorMessage))
+                    emit(value)
                 }
             }
         } else {

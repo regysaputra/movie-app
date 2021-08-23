@@ -1,5 +1,6 @@
 package com.bangkit.batikapp.core.di
 
+import com.bangkit.batikapp.core.data.BatikRepository
 import com.bangkit.batikapp.core.domain.repository.IBatikRepository
 import dagger.Binds
 import dagger.Module
@@ -11,6 +12,6 @@ import dagger.hilt.components.SingletonComponent
 abstract class RepositoryModule {
 
     @Binds
-    abstract fun provideRepository(batikRepository: com.bangkit.batikapp.core.data.BatikRepository): IBatikRepository
+    abstract fun provideRepository(batikRepository: BatikRepository): IBatikRepository
 
 }
